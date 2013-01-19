@@ -1,0 +1,21 @@
+{
+  "name": "node",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/misak113/node.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "3b5c74ad7f50fe78bd0f254da14b16f9e7afc164"
+}
