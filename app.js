@@ -1,10 +1,40 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello from <a href="http://appfog.com">AppFog.com</a>');
-}).listen(process.env.VMC_APP_PORT || 1337, null);
+
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://192.168.1.215/misak113');
+var db = mongoose.connection;
+
+db.on('open', function () {
+	start();
+});
+
+var start = function () {
+	Offer.findOne({id: 113}, function (e, offer) {
+		var data = {id: 113, name: 'Lahodná rajčátka', price: 4.65};
+		if (!offer) {
+			console.error(e);
+			offer = new Offer(data);
+		}
+
+		offer.name = 'Lahodná rajčátka';
+
+		offer.save(function (e, offer) {
+			console.error(e);
+			console.log(offer);
+		});
+	});
+
+};
+
+var offerSchema = mongoose.Schema({id: Number, name: String, price: Number});
+var Offer = mongoose.model('Offer', offerSchema);
 
 
+
+
+
+
+/*
 var express = require('express');
 
 var mongo = function () {
@@ -32,3 +62,4 @@ var port = 8087;
 app.listen(port);
 console.log('Listening on port ' + port);
 
+*/
