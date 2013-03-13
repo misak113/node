@@ -1,4 +1,4 @@
-
+/*
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://192.168.1.215/misak113');
@@ -32,9 +32,9 @@ var Offer = mongoose.model('Offer', offerSchema);
 
 
 
+*/
 
 
-/*
 var express = require('express');
 
 var mongo = function () {
@@ -62,4 +62,4 @@ var port = 8087;
 app.listen(port);
 console.log('Listening on port ' + port);
 
-*/
+
